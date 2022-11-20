@@ -2,6 +2,7 @@ package com.ninjaone.backendinterviewproject.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.ninjaone.backendinterviewproject.service.DeviceService;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,16 +20,17 @@ import lombok.ToString.Exclude;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class DeviceServiceCost {
+public class ServiceAssignment {
+
   @Id
   @GeneratedValue
   private Long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "device_id")
+  @JoinColumn(name = "customer_id")
   @JsonBackReference
   @Exclude
-  private Device device;
+  private Customer customer;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "service_id")
@@ -36,5 +38,6 @@ public class DeviceServiceCost {
   @Exclude
   private ServiceDevice serviceDevice;
 
-  private Double cost;
+  private Date date;
+
 }
