@@ -70,8 +70,8 @@ In addition to fulfilling the requirements of the service, special attention sho
 - Providing a flexible data model so that new Services can be added, or their cost changed in the
 future.
 - Efficient and correct calculation of service costs. 
-- For the sake of simplicity and respect to your time, do the simplest possible serviceDevice and write
-down what you would do if you had unlimited time to work on the serviceDevice. We will discuss
+- For the sake of simplicity and respect to your time, do the simplest possible service and write
+down what you would do if you had unlimited time to work on the service. We will discuss
 these in the subsequent call to completing this assessment.
 
 ## Notes

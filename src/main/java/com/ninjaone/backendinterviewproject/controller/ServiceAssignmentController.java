@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/service-assignment")
+@RequestMapping("/service-assignments")
 public class ServiceAssignmentController {
 
   private ServiceAssignmentService serviceAssignmentService;

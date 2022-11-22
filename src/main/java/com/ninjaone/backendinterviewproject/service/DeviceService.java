@@ -1,6 +1,7 @@
 package com.ninjaone.backendinterviewproject.service;
 
 import com.ninjaone.backendinterviewproject.model.Device;
+import java.util.List;
 import java.util.Optional;
 import javax.swing.text.html.Option;
 import org.springframework.stereotype.Service;
@@ -16,4 +17,5 @@ public interface DeviceService {
 
   void deleteDevice(Long id);
 
+  List<Device> getAllDevices();
 }

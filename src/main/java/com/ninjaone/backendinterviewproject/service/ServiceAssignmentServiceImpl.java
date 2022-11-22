@@ -4,7 +4,9 @@ import com.ninjaone.backendinterviewproject.database.ServiceAssignmentRepository
 import com.ninjaone.backendinterviewproject.model.ServiceAssignment;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServiceAssignmentServiceImpl implements ServiceAssignmentService {
 
   private ServiceAssignmentRepository serviceAssignmentRepository;
@@ -32,7 +34,7 @@ public class ServiceAssignmentServiceImpl implements ServiceAssignmentService {
         id);
     if (currentServiceAssignmentOptional.isPresent()) {
       ServiceAssignment currentServiceAssignment = currentServiceAssignmentOptional.get();
-      currentServiceAssignment.setServiceDevice(serviceAssignment.getServiceDevice());
+      currentServiceAssignment.setService(serviceAssignment.getService());
       currentServiceAssignment.setCustomer(serviceAssignment.getCustomer());
       currentServiceAssignment.setDate(serviceAssignment.getDate());
       return Optional.of(serviceAssignmentRepository.save(currentServiceAssignment));

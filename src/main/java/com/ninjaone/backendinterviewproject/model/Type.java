@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,12 +15,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class ServiceDevice {
+@Table(name = "types")
+public class Type {
 
   @Id
   @GeneratedValue
   private Long id;
   @Column(unique = true)
-  private String systemName;
-
+  private String typeName;
 }

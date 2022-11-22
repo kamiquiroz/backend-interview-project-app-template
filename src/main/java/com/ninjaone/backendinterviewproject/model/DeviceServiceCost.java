@@ -1,13 +1,13 @@
 package com.ninjaone.backendinterviewproject.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.ninjaone.backendinterviewproject.service.DeviceService;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,22 +19,24 @@ import lombok.ToString.Exclude;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "device_service_costs")
 public class DeviceServiceCost {
+
   @Id
   @GeneratedValue
   private Long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "device_id")
+  @JoinColumn(name = "type_id")
   @JsonBackReference
   @Exclude
-  private Device device;
+  private Type type;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "service_id")
   @JsonBackReference
   @Exclude
-  private ServiceDevice serviceDevice;
+  private Service service;
 
   private Double cost;
 }

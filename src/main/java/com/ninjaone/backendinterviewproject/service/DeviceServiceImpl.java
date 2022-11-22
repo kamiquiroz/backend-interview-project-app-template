@@ -2,9 +2,12 @@ package com.ninjaone.backendinterviewproject.service;
 
 import com.ninjaone.backendinterviewproject.database.DeviceRepository;
 import com.ninjaone.backendinterviewproject.model.Device;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DeviceServiceImpl implements DeviceService {
 
   private DeviceRepository deviceRepository;
@@ -41,5 +44,10 @@ public class DeviceServiceImpl implements DeviceService {
   @Override
   public void deleteDevice(Long id) {
     deviceRepository.deleteById(id);
+  }
+
+  @Override
+  public List<Device> getAllDevices() {
+    return (List<Device>) deviceRepository.findAll();
   }
 }
