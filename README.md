@@ -8,9 +8,8 @@ application shut down, you can change the spring.database.jdbc-url to point at a
 
 Run the `BackendInterviewProjectApplication` class
 
-Go to:
-* http://localhost:8080/sample/1
-* http://localhost:8080/sample/2
+Go to see the list of endpoints:
+* http://localhost:8080/swagger-ui/index.html
 
 You should see results for both of these. The application is working and connected to the H2 database. 
 

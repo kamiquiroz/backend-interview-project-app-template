@@ -54,8 +54,16 @@ public class DeviceControllerTest {
 
   @BeforeEach
   void setup() {
-    device = new Device(ID, "Mac", new Type(), 4D);
-    updatedDevice = new Device(ID, "Windows", new Type(), 4D);
+    device = new Device();
+    device.setSystemName("Mac");
+    device.setId(ID);
+    device.setType(new Type());
+    device.setCost(4D);
+    updatedDevice = new Device();
+    updatedDevice.setSystemName("Windows");
+    updatedDevice.setId(ID);
+    updatedDevice.setType(new Type());
+    updatedDevice.setCost(5D);
   }
 
   @Test
