@@ -19,8 +19,8 @@ import lombok.ToString.Exclude;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "device_service_costs")
-public class DeviceServiceCost {
+@Table(name = "service_costs")
+public class ServiceCost {
 
   @Id
   @GeneratedValue

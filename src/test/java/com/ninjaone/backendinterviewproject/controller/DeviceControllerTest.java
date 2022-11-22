@@ -13,6 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ninjaone.backendinterviewproject.BackendInterviewProjectApplication;
 import com.ninjaone.backendinterviewproject.model.Device;
+import com.ninjaone.backendinterviewproject.model.Type;
 import com.ninjaone.backendinterviewproject.service.DeviceService;
 import com.ninjaone.backendinterviewproject.service.DeviceServiceImpl;
 import java.util.Optional;
@@ -53,8 +54,8 @@ public class DeviceControllerTest {
 
   @BeforeEach
   void setup() {
-    device = new Device(ID, "Mac", "Device");
-    updatedDevice = new Device(ID, "Windows", "Device");
+    device = new Device(ID, "Mac", new Type(), 4D);
+    updatedDevice = new Device(ID, "Windows", new Type(), 4D);
   }
 
   @Test

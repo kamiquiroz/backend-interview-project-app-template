@@ -2,6 +2,7 @@ package com.ninjaone.backendinterviewproject.service;
 
 import com.ninjaone.backendinterviewproject.database.ServiceAssignmentRepository;
 import com.ninjaone.backendinterviewproject.model.ServiceAssignment;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,7 @@ public class ServiceAssignmentServiceImpl implements ServiceAssignmentService {
     if (currentServiceAssignmentOptional.isPresent()) {
       ServiceAssignment currentServiceAssignment = currentServiceAssignmentOptional.get();
       currentServiceAssignment.setService(serviceAssignment.getService());
-      currentServiceAssignment.setCustomer(serviceAssignment.getCustomer());
+      currentServiceAssignment.setDevice(serviceAssignment.getDevice());
       currentServiceAssignment.setDate(serviceAssignment.getDate());
       return Optional.of(serviceAssignmentRepository.save(currentServiceAssignment));
     } else {
@@ -46,5 +47,10 @@ public class ServiceAssignmentServiceImpl implements ServiceAssignmentService {
   @Override
   public void deleteServiceAssignment(Long id) {
     serviceAssignmentRepository.deleteById(id);
+  }
+
+  @Override
+  public List<ServiceAssignment> findAllServiceAssignments() {
+    return (List<ServiceAssignment>) serviceAssignmentRepository.findAll();
   }
 }

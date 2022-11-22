@@ -1,7 +1,6 @@
 package com.ninjaone.backendinterviewproject.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -38,7 +37,5 @@ public class DeviceAssignment {
   @JsonBackReference
   @Exclude
   private Device device;
-
-  private Date date;
 
 }

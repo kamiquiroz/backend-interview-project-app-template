@@ -8,7 +8,9 @@ import static org.mockito.Mockito.when;
 
 import com.ninjaone.backendinterviewproject.database.DeviceRepository;
 import com.ninjaone.backendinterviewproject.model.Device;
+import com.ninjaone.backendinterviewproject.model.Type;
 import java.util.Optional;
+import net.bytebuddy.implementation.bytecode.assign.Assigner.EqualTypesOnly;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,8 +35,8 @@ public class ServiceTest {
 
   @BeforeEach
   void setup() {
-    device = new Device(ID, "Mac", "Device");
-    updatedDevice = new Device(ID, "Windows", "Device");
+    device = new Device(ID, "Mac", new Type(), 3.0);
+    updatedDevice = new Device(ID, "Windows", new Type(), 3.0);
   }
 
   @Test

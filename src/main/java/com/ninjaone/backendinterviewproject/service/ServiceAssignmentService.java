@@ -1,6 +1,7 @@
 package com.ninjaone.backendinterviewproject.service;
 
 import com.ninjaone.backendinterviewproject.model.ServiceAssignment;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +16,5 @@ public interface ServiceAssignmentService {
 
   void deleteServiceAssignment(Long id);
 
+  List<ServiceAssignment> findAllServiceAssignments();
 }

@@ -22,5 +22,6 @@ public class Customer {
   @GeneratedValue
   private Long id;
   @Column(unique = true)
-  private String name;
+  private String customerName;
+
 }

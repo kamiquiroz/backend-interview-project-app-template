@@ -28,12 +28,12 @@ public class ServiceAssignment {
   private Long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "customer_id")
+  @JoinColumn(name = "device_id")
   @JsonBackReference
   @Exclude
-  private Customer customer;
+  private Device device;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "service_id")
   @JsonBackReference
   @Exclude
